@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post 'index', to: 'restaurants#create'
 
   resources :restaurants do
-    resources :reviews, only: [:new, :create] #:rating?
+    resources :reviews, only: [:new, :create]
   end
+
+  resources :reviews, only: [:destroy]
 end
